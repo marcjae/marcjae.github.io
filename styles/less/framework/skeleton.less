@@ -1,0 +1,328 @@
+/*
+* Skeleton V1.2
+* Copyright 2011, Dave Gamache
+* www.getskeleton.com
+* Free to use under the MIT license.
+* http://www.opensource.org/licenses/mit-license.php
+* 6/20/2012
+*/
+
+
+// Table of Contents
+// ==================================================
+//    #Base 960 Grid
+//    #Tablet (Portrait)
+//    #Mobile (Portrait)
+//    #Mobile (Landscape)
+//    #Clearing */
+
+
+
+
+/*
+
+// #Base 960 Grid
+// ==================================================
+@width_desktop: 960px;
+@width_tablet: 768px;
+@width_mobile_landscape: 480px;
+@width_mobile: 320px;
+
+@gutter_desktop: 20px;
+@gutter_tablet: 20px;
+@gutter_mobile_landscape: 20px;
+@gutter_mobile: 20px;
+@maxCol: 16;
+
+// #Base 1024 Grid
+// ==================================================
+@width_desktop: 1024px;
+@width_tablet: 768px;
+@width_mobile_landscape: 480px;
+@width_mobile: 320px;
+
+@gutter_desktop: 20px;
+@gutter_tablet: 20px;
+@gutter_mobile_landscape: 20px;
+@gutter_mobile: 20px;
+@maxCol: 16;
+
+// #Base 1140 Grid
+// ==================================================
+@width_desktop: 1140px;
+@width_tablet: 768px;
+@width_mobile_landscape: 480px;
+@width_mobile: 320px;
+
+@gutter_desktop: 20px;
+@gutter_tablet: 20px;
+@gutter_mobile_landscape: 20px;
+@gutter_mobile: 20px;
+@maxCol: 12;
+
+// #Base 1200 Grid
+// ==================================================
+@width_desktop: 1200px;
+@width_tablet: 768px;
+@width_mobile_landscape: 480px;
+@width_mobile: 320px;
+
+@gutter_desktop: 20px;
+@gutter_tablet: 20px;
+@gutter_mobile_landscape: 20px;
+@gutter_mobile: 20px;
+@maxCol: 16;
+
+*/
+
+// #Base 1200 Grid
+// ==================================================
+@width_desktop: 960px;
+@width_tablet: 768px;
+@width_mobile_landscape: 480px;
+@width_mobile: 320px;
+
+@breakpoint_desktop: 959px;
+
+@gutter_desktop: 20px;
+@gutter_tablet: 20px;
+@gutter_mobile_landscape: 20px;
+@gutter_mobile: 20px;
+@maxCol: 16;
+
+
+
+.column_calculator(@count,@grid,@gutter){
+  @col: @count - 1;
+  @colwidth: (@grid/@maxCol) - (@gutter);
+  width: (@colwidth*@count) + ( (@gutter/2 * @col) + (@gutter/2 * @col));
+}
+
+.offset_calculator(@count,@grid,@gutter){
+  @col: @count - 1;
+  @colwidth: (@grid/@maxCol) - (@gutter);
+  padding-left: (@colwidth*@count) + ( (@gutter/2 * @col) + (@gutter/2 * @col)) + (@gutter);
+}
+
+.thirds(@count,@grid,@gutter) {
+  @col:  @count - 1;
+  @width: @grid/3 * @col;
+  width: (@grid/3 - (@gutter)) + @width;
+}
+
+.container                                  { position: relative; width: @width_desktop; margin: 0 auto; padding: 0; }
+.container .column,
+.container .columns                         { float: left; display: inline; margin-left: @gutter_desktop/2; margin-right: @gutter_desktop/2; }
+.row                                        { margin-bottom: 20px; }
+
+/* Nested Column Classes */
+.column.alpha, .columns.alpha               { margin-left: 0; }
+.column.omega, .columns.omega               { margin-right: 0; }
+
+/* Base Grid */
+.container .one.column,
+.container .one.columns                     { .column_calculator(1, @width_desktop, @gutter_desktop) }
+.container .two.columns                     { .column_calculator(2, @width_desktop, @gutter_desktop) }
+.container .three.columns                   { .column_calculator(3, @width_desktop, @gutter_desktop) }
+.container .four.columns                    { .column_calculator(4, @width_desktop, @gutter_desktop) }
+.container .five.columns                    { .column_calculator(5, @width_desktop, @gutter_desktop) }
+.container .six.columns                     { .column_calculator(6, @width_desktop, @gutter_desktop) }
+.container .seven.columns                   { .column_calculator(7, @width_desktop, @gutter_desktop) }
+.container .eight.columns                   { .column_calculator(8, @width_desktop, @gutter_desktop) }
+.container .nine.columns                    { .column_calculator(9, @width_desktop, @gutter_desktop) }
+.container .ten.columns                     { .column_calculator(10, @width_desktop, @gutter_desktop) }
+.container .eleven.columns                  { .column_calculator(11, @width_desktop, @gutter_desktop) }
+.container .twelve.columns                  { .column_calculator(12, @width_desktop, @gutter_desktop) }
+.container .thirteen.columns                { .column_calculator(13, @width_desktop, @gutter_desktop) }
+.container .fourteen.columns                { .column_calculator(14, @width_desktop, @gutter_desktop) }
+.container .fifteen.columns                 { .column_calculator(15, @width_desktop, @gutter_desktop) }
+.container .sixteen.columns                 { .column_calculator(16, @width_desktop, @gutter_desktop) }
+
+.container .one-third.column                { .thirds(1, @width_desktop, @gutter_desktop) }
+.container .two-thirds.column               { .thirds(2, @width_desktop, @gutter_desktop) }
+
+/* Offsets */
+.container .offset-by-one                   { .offset_calculator(1, @width_desktop, @gutter_desktop) }
+.container .offset-by-two                   { .offset_calculator(2, @width_desktop, @gutter_desktop) }
+.container .offset-by-three                 { .offset_calculator(3, @width_desktop, @gutter_desktop) }
+.container .offset-by-four                  { .offset_calculator(4, @width_desktop, @gutter_desktop) }
+.container .offset-by-five                  { .offset_calculator(5, @width_desktop, @gutter_desktop) }
+.container .offset-by-six                   { .offset_calculator(6, @width_desktop, @gutter_desktop) }
+.container .offset-by-seven                 { .offset_calculator(7, @width_desktop, @gutter_desktop) }
+.container .offset-by-eight                 { .offset_calculator(8, @width_desktop, @gutter_desktop) }
+.container .offset-by-nine                  { .offset_calculator(9, @width_desktop, @gutter_desktop) }
+.container .offset-by-ten                   { .offset_calculator(10, @width_desktop, @gutter_desktop) }
+.container .offset-by-eleven                { .offset_calculator(11, @width_desktop, @gutter_desktop) }
+.container .offset-by-twelve                { .offset_calculator(12, @width_desktop, @gutter_desktop) }
+.container .offset-by-thirteen              { .offset_calculator(13, @width_desktop, @gutter_desktop) }
+.container .offset-by-fourteen              { .offset_calculator(14, @width_desktop, @gutter_desktop) }
+.container .offset-by-fifteen               { .offset_calculator(15, @width_desktop, @gutter_desktop) }
+
+// #Tablet (Portrait)
+// ==================================================
+// Note: Design for a width of 768px
+@media only screen and (min-width: 768px) and (max-width: @breakpoint_desktop) {
+  .container                                  { width: @width_tablet; }
+  .container .column,
+  .container .columns                         { margin-left: @gutter_tablet/2; margin-right: @gutter_tablet/2;  }
+  .column.alpha, .columns.alpha               { margin-left: 0; margin-right: @gutter_tablet/2; }
+  .column.omega, .columns.omega               { margin-right: 0; margin-left: @gutter_tablet/2; }
+  .alpha.omega                                { margin-left: 0; margin-right: 0; }
+
+  .container .one.column,
+  .container .one.columns                     { .column_calculator(1, @width_tablet, @gutter_tablet) }
+  .container .two.columns                     { .column_calculator(2, @width_tablet, @gutter_tablet) }
+  .container .three.columns                   { .column_calculator(3, @width_tablet, @gutter_tablet) }
+  .container .four.columns                    { .column_calculator(4, @width_tablet, @gutter_tablet) }
+  .container .five.columns                    { .column_calculator(5, @width_tablet, @gutter_tablet) }
+  .container .six.columns                     { .column_calculator(6, @width_tablet, @gutter_tablet) }
+  .container .seven.columns                   { .column_calculator(7, @width_tablet, @gutter_tablet) }
+  .container .eight.columns                   { .column_calculator(8, @width_tablet, @gutter_tablet) }
+  .container .nine.columns                    { .column_calculator(9, @width_tablet, @gutter_tablet) }
+  .container .ten.columns                     { .column_calculator(10, @width_tablet, @gutter_tablet) }
+  .container .eleven.columns                  { .column_calculator(11, @width_tablet, @gutter_tablet) }
+  .container .twelve.columns                  { .column_calculator(12, @width_tablet, @gutter_tablet) }
+  .container .thirteen.columns                { .column_calculator(13, @width_tablet, @gutter_tablet) }
+  .container .fourteen.columns                { .column_calculator(14, @width_tablet, @gutter_tablet) }
+  .container .fifteen.columns                 { .column_calculator(15, @width_tablet, @gutter_tablet) }
+  .container .sixteen.columns                 { .column_calculator(16, @width_tablet, @gutter_tablet) }
+
+  .container .one-third.column                { .thirds(1, @width_tablet, @gutter_tablet) }
+  .container .two-thirds.column               { .thirds(2, @width_tablet, @gutter_tablet) }
+
+  /* Offsets */
+  .container .offset-by-one                   { .offset_calculator(1, @width_tablet, @gutter_tablet) }
+  .container .offset-by-two                   { .offset_calculator(2, @width_tablet, @gutter_tablet) }
+  .container .offset-by-three                 { .offset_calculator(3, @width_tablet, @gutter_tablet) }
+  .container .offset-by-four                  { .offset_calculator(4, @width_tablet, @gutter_tablet) }
+  .container .offset-by-five                  { .offset_calculator(5, @width_tablet, @gutter_tablet) }
+  .container .offset-by-six                   { .offset_calculator(6, @width_tablet, @gutter_tablet) }
+  .container .offset-by-seven                 { .offset_calculator(7, @width_tablet, @gutter_tablet) }
+  .container .offset-by-eight                 { .offset_calculator(8, @width_tablet, @gutter_tablet) }
+  .container .offset-by-nine                  { .offset_calculator(9, @width_tablet, @gutter_tablet) }
+  .container .offset-by-ten                   { .offset_calculator(10, @width_tablet, @gutter_tablet) }
+  .container .offset-by-eleven                { .offset_calculator(11, @width_tablet, @gutter_tablet) }
+  .container .offset-by-twelve                { .offset_calculator(12, @width_tablet, @gutter_tablet) }
+  .container .offset-by-thirteen              { .offset_calculator(13, @width_tablet, @gutter_tablet) }
+  .container .offset-by-fourteen              { .offset_calculator(14, @width_tablet, @gutter_tablet) }
+  .container .offset-by-fifteen               { .offset_calculator(15, @width_tablet, @gutter_tablet) }
+}
+
+
+//  #Mobile (Portrait)
+// ==================================================
+
+// Note: Design for a width of 320px
+@media only screen and (max-width: 767px) {
+  .container { width: @width_mobile - @gutter_mobile; }
+  .container .columns,
+  .container .column { margin: 0; }
+
+  .container .one.column,
+  .container .one.columns,
+  .container .two.columns,
+  .container .three.columns,
+  .container .four.columns,
+  .container .five.columns,
+  .container .six.columns,
+  .container .seven.columns,
+  .container .eight.columns,
+  .container .nine.columns,
+  .container .ten.columns,
+  .container .eleven.columns,
+  .container .twelve.columns,
+  .container .thirteen.columns,
+  .container .fourteen.columns,
+  .container .fifteen.columns,
+  .container .sixteen.columns,
+  .container .one-third.column,
+  .container .two-thirds.column  { width: @width_mobile - @gutter_mobile; }
+
+  /* Offsets */
+  .container .offset-by-one,
+  .container .offset-by-two,
+  .container .offset-by-three,
+  .container .offset-by-four,
+  .container .offset-by-five,
+  .container .offset-by-six,
+  .container .offset-by-seven,
+  .container .offset-by-eight,
+  .container .offset-by-nine,
+  .container .offset-by-ten,
+  .container .offset-by-eleven,
+  .container .offset-by-twelve,
+  .container .offset-by-thirteen,
+  .container .offset-by-fourteen,
+  .container .offset-by-fifteen { padding-left: 0; }
+
+}
+
+
+// #Mobile (Landscape)
+// ==================================================
+
+// Note: Design for a width of 480px
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  .container { width: @width_mobile_landscape - @gutter_mobile_landscape; }
+  .container .columns,
+  .container .column { margin: 0; }
+
+  .container .one.column,
+  .container .one.columns,
+  .container .two.columns,
+  .container .three.columns,
+  .container .four.columns,
+  .container .five.columns,
+  .container .six.columns,
+  .container .seven.columns,
+  .container .eight.columns,
+  .container .nine.columns,
+  .container .ten.columns,
+  .container .eleven.columns,
+  .container .twelve.columns,
+  .container .thirteen.columns,
+  .container .fourteen.columns,
+  .container .fifteen.columns,
+  .container .sixteen.columns,
+  .container .one-third.column,
+  .container .two-thirds.column { width: @width_mobile_landscape - @gutter_mobile_landscape; }
+}
+
+
+// #Clearing
+// ==================================================
+
+// Self Clearing Goodness
+.container:after { content: "\0020"; display: block; height: 0; clear: both; visibility: hidden; }
+
+/* Use clearfix class on parent to clear nested columns,
+or wrap each row of columns in a <div class="row"> */
+.clearfix:before,
+.clearfix:after,
+.row:before,
+.row:after {
+  content: '\0020';
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+.row:after,
+.clearfix:after {
+  clear: both;
+}
+.row,
+.clearfix {
+  zoom: 1;
+}
+
+/* You can also use a <br class="clear" /> to clear columns */
+.clear {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}

@@ -1,0 +1,130 @@
+#header {
+  //background-color:@color_primary;
+  height:@header_height;
+  //border-bottom: 1px solid @color_border;
+  margin: 0;
+  position:fixed;
+  left:0;
+  width:100%;
+  top:0;
+  background: rgba(255,255,255,0.8);
+  z-index: 2;
+  .border_fade_bottom;  
+  .section_animate(0.3s,0s);
+  
+    .content {
+      padding: @header_content_padding 0;
+      height: @header_height - @header_content_padding;
+    }
+    
+    
+    &:hover {
+      background: rgba(255,255,255,1);
+    }
+    
+  .icon:before {
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: 1;
+    text-align: center;
+    text-transform: none;
+    width: 60px;
+    z-index:4;
+    position: relative;
+  }
+
+  .icon:before {
+    background: none repeat scroll 0 0 @iconColour;
+    box-shadow: 0 3px rgba(254,254,254,0), 0 -9px @iconColour, 0 -22px rgba(254,254,254,0), 0 -18px @iconColour;
+    content: "";
+    height: 5px;
+    margin-left: 0;
+    vertical-align: -5px;
+    width: 35px;
+  }
+  
+  @bordercolor: #ffffff;
+
+  .icon {
+    position:relative;
+    top:5px;
+    cursor:pointer;
+    width:35px;
+    
+      &:hover {
+          #menu {
+          display:block;
+          opacity: 1;
+          height: 145px;
+          
+          .indicator {
+            border-right: 1px solid #e3e5e7;           
+            box-shadow: -1px -2px 3px 0 rgba(0, 0, 0, 0.16); 
+            background: #ffffff; 
+          }  
+          
+          ul {
+            height:128px;
+            border-right: 1px solid #e3e5e7;      
+            border-top: 1px solid #e3e5e7;  
+          }             
+        }
+      }
+    
+    
+  }  
+  
+  #menu {
+    .section_animate(0.3s,0s);
+    box-shadow: -1px 2px 2px 0 rgba(0, 0, 0, 0.16);
+    position:relative;
+    top: 0;
+    background: #ffffff;
+    width: 300px;
+    left: -10px;
+    position:relative;    
+    height:0;
+    
+    
+    
+    ul {
+      .section_animate(0.3s,0s);
+      padding-top:12px;
+      position:relative;
+      height:0;
+      overflow:hidden;
+      
+      top: 2px;     
+
+      padding-bottom:0;             
+        
+        li {
+          padding-left: 10px;
+          
+            a {
+              display:block;
+              padding: 5px 0;
+              text-decoration:none;
+            }
+          
+        }
+        
+    }
+    .indicator {
+      position:absolute;
+      width: 53px;
+      height: 38px;
+      top:-35px;
+      left:0;
+      
+      z-index:2;
+  
+    }    
+  }  
+    
+    
+    
+  
+}
