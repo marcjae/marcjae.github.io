@@ -1,12 +1,15 @@
 body {
   //background-color: @color_primary;
-  font-family: 'Lato', sans-serif;
+  color: @color_type;
 }
 
 h1 {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
   font-weight:200;
-  color: #949494;
+  color: @color_type;
+  font-size:5.875em;
+  line-height:normal;
+  text-indent: -10px;
 }
 
 #content {
@@ -15,8 +18,26 @@ h1 {
   //top: @header_height + @content_offset_top;
   //bottom: @footer_height + @content_offset_bottom;
   //width:100%;
+   padding-top: @header_height;
   
-  padding-top: @content_offset_top + @header_height;
-  min-height:1200px;
+}
+
+
+#sections {
+  padding:0;
+  margin:0;
+  
+    li.section {
+      min-height: 600px;
+      display:block;
+      padding-bottom: 20px;
+      
+        &.home {
+          //background: @color_primary;
+         
+        }
+      
+      
+    }
   
 }
