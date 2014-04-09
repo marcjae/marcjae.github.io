@@ -2,5 +2,5 @@
 
 // jQuery is ready
 $(document).ready(function(){
-	alert('here');
+	// Doc ready
 })
