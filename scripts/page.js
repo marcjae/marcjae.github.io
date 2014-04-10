@@ -1,7 +1,28 @@
 // @koala-prepend "jquery.js"
 // @koala-prepend "libs.js"
+// @koala-prepend "git.js"
 
 app = {}
+app.github = function() {
+	
+	var github = new Github({
+	  auth: "basic"
+	});	
+
+	
+	var repo = github.getRepo('marcjae', 'marcjae.github.io');
+	repo.show(function(err, repo) {
+		console.log(repo)
+		var lastupdate = repo.updated_at;
+		var date = lastupdate.split('T')[0];
+		var time = lastupdate.split('T')[1];
+		time = time.split('Z')[0];
+		
+		$('#git_date').html(date);
+		$('#git_time').html(time);
+	});
+	
+}
 app.sections = function(action){
 	
 	var section = $('.section')
@@ -30,18 +51,14 @@ app.sections = function(action){
 	}	
 }
 app.init = function(){
-	this.sections('adjust')
+	this.sections('adjust');
+	this.github();
 }
+
 
 
 $(document).ready(function(){
 	// Document ready
-	
-
-
-
-
-	
 	app.init();
 	
 })
