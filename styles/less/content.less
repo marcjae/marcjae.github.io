@@ -1,6 +1,25 @@
+.development {
+  #footer {
+    display:none;
+    height:0;
+  }
+  #content {
+    overflow:hidden; 
+  }
+  
+  #sections {
+    
+    li.section {
+      min-height: 0;
+    }
+    
+  }  
+}
+
 body {
   //background-color: @color_primary;
   color: @color_type;
+  line-height: normal;
 }
 
 h1 {
@@ -18,7 +37,7 @@ h1 {
   //top: @header_height + @content_offset_top;
   //bottom: @footer_height + @content_offset_bottom;
   //width:100%;
-   padding-top: @header_height;
+  //padding-top: @header_height;
   
 }
 
@@ -31,10 +50,31 @@ h1 {
       min-height: 600px;
       display:block;
       padding-bottom: 20px;
+      position:relative;
+      overflow:hidden;
+      margin:0;
       
         &.home {
           //background: @color_primary;
+         .gradient(@color_primary, @color_primary, #1289b1);
          
+          h1 {
+            color:#ffffff;
+          }
+         
+        }
+        
+        .content {
+          
+          &.centered {
+            display: table-cell;
+            vertical-align: middle;
+            height: 400px;
+            width:100%;
+            text-align:left;
+          }
+          
+
         }
       
       

@@ -6,15 +6,20 @@
   position:fixed;
   left:0;
   width:100%;
-  top:0;
-  background: rgba(255,255,255,0.8);
+  top:-@header_height;
+  .colorize_bg(#ffffff, 0.8);
   z-index: 2;
   .border_fade_bottom;  
-  .section_animate(0.3s,0s);
+  //border-bottom: 1px solid @color_border;
+  .section_animate(0.4s,0s);
   
     .content {
       padding: @header_content_padding 0;
       height: @header_height - @header_content_padding;
+    }
+    
+    &.fixed {
+      top: 0;
     }
     
     
@@ -77,7 +82,7 @@
   }  
   
   #menu {
-    .section_animate(0.3s,0s);
+    .section_animate_height(0.3s,0s);
     box-shadow: -1px 2px 2px 0 rgba(0, 0, 0, 0.16);
     position:relative;
     top: 0;
@@ -90,7 +95,7 @@
     
     
     ul {
-      .section_animate(0.3s,0s);
+      .section_animate_height(0.3s,0s);
       padding-top:12px;
       position:relative;
       height:0;

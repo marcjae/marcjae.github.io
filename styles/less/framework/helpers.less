@@ -34,7 +34,35 @@
   }   
 }
 
-.section_animate(@timing:0.3s,@delay:0.8s) {
+.section_animate_height(@timing:0.3s,@delay:0.8s) {
   -webkit-transition: height @timing linear @delay;
   transition: height @timing linear @delay;       
+}
+
+.section_animate(@timing:0.3s,@delay:0.8s) {
+  -webkit-transition: all @timing linear @delay;
+  transition: all @timing linear @delay;       
+}
+
+.gradient(@color: #F5F5F5, @start: #EEE, @stop: #FFF) {
+  background: @color;
+  background: -webkit-gradient(linear,
+                               left bottom,
+                               left top,
+                               color-stop(0, @start),
+                               color-stop(1, @stop));
+  background: -ms-linear-gradient(bottom,
+                                  @start,
+                                  @stop);
+  background: -moz-linear-gradient(center bottom,
+                                   @start 0%,
+                                   @stop 100%);
+  background: -o-linear-gradient(@stop,
+                                 @start);
+  filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@stop,@start));
+}
+
+
+.colorize_bg(@color: @white, @alpha: 1) {
+       background: hsla(hue(@color), saturation(@color), lightness(@color), @alpha);
 }
