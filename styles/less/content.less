@@ -60,7 +60,7 @@ h1 {
       position:relative;
       overflow:hidden;
       margin:0;
-      .section_animate_height(0.3s,0s);
+      .section_animate_height(0.6s,0.2s);
       
         &.home {
           //background: @color_primary;
@@ -75,12 +75,18 @@ h1 {
         .content {
           
           &.centered {
-            .section_animate_height(0.3s,0s);
+            .section_animate(0.6s,0.2s);
+            opacity:0;
             display: table-cell;
             vertical-align: middle;
             height: 400px;
             width:100%;
             text-align:left;
+            
+              &.ready {
+                opacity:1;
+              }
+            
           }
           
 
