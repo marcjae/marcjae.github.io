@@ -19,7 +19,7 @@ app.github = function() {
 		time = time.split('Z')[0];
 		
 		$('#git_date').html(date);
-		$('#git_time').html(time);
+		$('#git_time').html('('+time+')');
 	});
 	
 }
