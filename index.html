@@ -4,7 +4,7 @@ title: Home
 ---
 
 <ul id="sections">
-	<li class="section home">
+	<li class="section comingsoon" >
 		<div class="container">
 			<div class="columns sixteen">
 				<!--<h1>{{ page.title }}</h1>-->
@@ -16,9 +16,22 @@ title: Home
 				
 				
 			</div>
-		</div>
+		</div>		
 	</li>
 	<!--
+	<li class="section home">
+
+	</li>
+	<li class="section blogposts">
+		<ul>
+		  {% for post in site.posts %}
+		    <li>
+		      <a href="{{ post.url }}">{{ post.title }}</a>
+		    </li>
+		  {% endfor %}
+		</ul>		
+	</li>
+		
 	<li class="section about">
 		<div class="container">
 			<div class="columns sixteen">
